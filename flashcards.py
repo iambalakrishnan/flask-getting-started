@@ -9,9 +9,9 @@ def welcome():
     return render_template('welcome.html',
                            message='Here is a message from view.')
 
-@app.route('/card')
-def card_view():
-    card = db[0]
+@app.route('/card/<int:index>')
+def card_view(index):#receives input from browser
+    card = db[index]
     return render_template('card.html', card=card)
 
 
